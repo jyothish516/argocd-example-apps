@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: guestbook-ui
+  annotations:
+    argocd.argoproj.io/sync-options: PruneLast=true
 spec:
   replicas: 1
   selector:
