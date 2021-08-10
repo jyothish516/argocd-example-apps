@@ -1,1 +1,15 @@
 
+# Source: asr/templates/hpa.yaml
+
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: test-1
+spec:
+  maxReplicas: 2
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Replicaset
+    name: guestbook-ui
+  targetCPUUtilizationPercentage: 50
