@@ -1,12 +1,13 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: test-1
+  name: guestbook-ui
 spec:
-  scaleRef:
+  maxReplicas: 10
+  minReplicas: 3 
+  scaleTargetRef:
+    apiVersion: apps/v1
     kind: ReplicaSet
     name: guestbook-ui
-  minReplicas: 3
-  maxReplicas: 10
-  cpuUtilization:
-    targetPercentage: 50
+    
+  targetCPUUtilizationPercentage: 60
