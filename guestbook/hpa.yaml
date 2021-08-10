@@ -6,7 +6,6 @@ spec:
   scaleRef:
     kind: ReplicaSet
     name: guestbook-ui
-    subresource: scale
   minReplicas: 3
   maxReplicas: 10
   cpuUtilization:
