@@ -7,7 +7,6 @@ spec:
   selector:
     matchLabels:
       app: guestbook
-      app1: app
   template:
     metadata:
       labels:
@@ -15,7 +14,7 @@ spec:
     spec:
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-        name: guestbook-ui
+        name: guestbook
         resources:
           requests:
             cpu: 100m
